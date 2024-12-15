@@ -68,7 +68,7 @@ class MQTTClient:
         addr = socket.getaddrinfo(self.server, self.port)[0][-1]
         self.sock.connect(addr)
         if self.ssl is True:
-            # Legacy support for ssl=True and ssl_params arguments.
+            # Legacy support for ssl=True and ssl_params arguments - Untested.
             import ssl
 
             self.sock = ssl.wrap_socket(self.sock, **self.ssl_params)
