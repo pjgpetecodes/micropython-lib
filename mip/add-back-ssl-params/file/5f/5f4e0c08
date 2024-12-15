@@ -70,7 +70,7 @@ class MQTTClient:
         if self.ssl is True:
             # Legacy support for ssl=True and ssl_params arguments.
             import ssl
-            
+
             self.sock = ssl.wrap_socket(self.sock, **self.ssl_params)
         elif self.ssl:
             self.sock = self.ssl.wrap_socket(self.sock, server_hostname=self.server)
